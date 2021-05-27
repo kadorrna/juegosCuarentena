@@ -1,0 +1,53 @@
+/*
+  Add all your css styling here.
+*/
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+/* GENERAL */
+.menuCard {  
+  min-height: 120px;
+}
+.bingoButton:hover {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+.sopaButton:hover{
+  background-color: blueviolet;
+  color: white;
+  cursor: pointer;
+}
+/* BINGO */
+.welcome {
+  margin-top: 5%;
+}
+#gameCard {
+  display: none;
+}
+.game {
+  display: none;
+  margin: 0 auto;
+  width: 50%;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+#endGameText {
+  display: none;
+}
+#savePlayers {
+  margin-top: 10px;
+}
+#letter {
+  font-size: 90px;
+}
+.game-ended {
+  font-size: large;
+  color: red;
+}
+.tootipEstilado:hover {
+  cursor: pointer;
+}
