@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Bingo Familiar</title>
-  <link rel="shortcut icon" type="image/jpg" href="icon.png"/>
+  <link rel="shortcut icon" type="image/jpg" href="../img/icon.png"/>
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="sopa.css" />
   <script
@@ -35,13 +35,24 @@
   />
   <script src="./sopa.js"></script>
 </head>
-<div id="content">
-  <div id="cardPile"></div>
-  <div id="cardSlots"></div>
-  
-  <div id="successMessage">
-    <h2>You did it!</h2>
-    <button onclick="init()">Play Again!</button>
+<body class="container" id="sopa">
+  <div>
+    <button class="btn btn-link mt-2" onclick="location.href='../index.html';">&laquo; Atr&aacute;s</button>
   </div>
+
+  <div class="text-center">
+    <img src="../img/icon.png" />
+    <h1>¡Une las may&uacute;sculas y las min&uacute;sculas!</h1>
+  </div>
+
+  <div id="content" class="mt-5 mx-0">
+    <div id="cardPile" class="row mx-0"></div>
+    <div id="cardSlots" class="row mx-0"></div>
+    
+    <div id="successMessage" class="text-center">
+      <h2>¡Lo Lograste!</h2>
+      <button class="btn btn-dark" onclick="init()">Volver a jugar</button>
+    </div>
 </div>
+</body>
 </html>

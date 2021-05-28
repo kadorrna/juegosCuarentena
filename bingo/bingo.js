@@ -1,15 +1,12 @@
-/*
-  This is a great way to quickly test things out!
-
-  Add all your JavaScript here.
-  Open the `index.html` file in Chrome, save changes here,
-  and simply refresh Chrome to see those changes.
-*/
+$(function() {
+  $("#players").focus()
+});
 
 let players = "";
-let playersArr = [];
+let playersArr = []
 function startGame() {
-  $("#savePlayers").prop("disabled", true);
+  $("#savePlayers").prop("disabled", true)
+  $("#startPanel").toggle('slide')
   $("#players").prop("disabled", true);
   players = $("#players").val().toLowerCase().replace(/ /g, "")
   players = players.replace(/[^a-zA-Z 0-9]+/g, "")
@@ -20,7 +17,8 @@ function startGame() {
   }
   $("#remainingLettersCount").text(playersArr.length)
   $("#remainingLetters").tooltip("dispose").attr("title", remainingLetters()).tooltip()
-  runEffect();
+  $("#letter").text(" ")
+  $("#gameCard").toggle('slide')
 }
 function remainingLetters() {
   return playersArr.join(", ")
@@ -33,37 +31,35 @@ function popLetter() {
   $("#remainingLetters").tooltip("dispose").attr("title", remainingLetters()).tooltip()
   if (playersArr.length === 0) {
     $("#letterButton").prop("disabled", true);
-    $("#endGameText").show();
-    playersArr = [];
+    finish()
+    playersArr = []
   }
 }
 function resetGame() {
+  $("#gameCard").toggle('slide')
+  $("#startPanel").toggle('slide')
   playersArr = [];
   players = "";
   $("#players").val("");
-  $("#letter").text("");
-  $(".game").hide();
-  $("#endGameText").hide();
-  $("#savePlayers").prop("disabled", false);
-  $("#letterButton").prop("disabled", false);
-  $("#players").prop("disabled", false);
-}
-
-function runEffect() {
-  var options = {};
-  $(".game").effect("slide", options, 500, callbackSlide);
-}
-
-// Callback function to bring a hidden box back
-function callbackSlide() {
-  setTimeout(function () {
-    $(".game").removeAttr("style").hide().fadeIn();
-  }, 1000);
+  $("#savePlayers").prop("disabled", false)
+  $("#letterButton").prop("disabled", false)
+  $("#players").prop("disabled", false)
+  $('#successMessage').hide()
 }
 
 // Set effect from select menu value
 $("#savePlayers").on("click", function () {
-  runEffect();
-  return false;
+  $("#gameCard").toggle('slide')
+  return false
 });
 
+function finish() {
+  $('#successMessage').show()
+  $('#successMessage').animate({
+    left: '380px',
+    top: '200px',
+    width: '400px',
+    height: '140px',
+    opacity: 1
+  })
+}

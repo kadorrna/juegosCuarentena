@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Bingo Familiar</title>
-    <link rel="shortcut icon" type="image/jpg" href="icon.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="../img/icon.png"/>
     <link rel="stylesheet" href="../styles.css" />
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
@@ -34,54 +34,54 @@
     />
     <script src="./bingo.js"></script>
   </head>
-  <body class="container">
+  <body class="container" id="bingo">
+    <div>
+      <button class="btn btn-link mt-2" onclick="location.href='../index.html';">&laquo; Atr&aacute;s</button>
+    </div>
     <div class="text-center">
       <img src="../img/icon.png" />
       <h1>¡Bingo de Letras!</h1>
-      <div class="form-group text-left">
-        <label for="players">
-          Ingrese participantes separdos por espacio o "enter"
-        </label>
-        <textarea class="form-control" rows="5" id="players"></textarea>
-      </div>
-      <div class="form-group row-1 text-left">
-        <button id="savePlayers" onclick="startGame()" class="btn btn-primary">
-          Guardar Participantes
-        </button>
-      </div>
-      <div class="form-group row-1 text-left"></div>
     </div>
 
-    <div class="game card" id="gameCard">
-      <div class="row">
-        <div class="col text-center">
-          <span>Letras que faltan salir:</span> <p id="remainingLettersCount"/>
+      <div class="content mt-5">
+        <div id="startPanel">
+          <div class="form-group text-left" id="gameStartDiv">
+            <label for="players">
+              Escriba los nombres de los participantes separdos por espacio o "enter"
+            </label>
+            <textarea class="form-control" rows="5" id="players"></textarea>
+          </div>
+          <div class="form-group row-1 text-left">
+            <button id="savePlayers" onclick="startGame()" class="btn btn-primary">
+              Empezar
+            </button>
+          </div>
         </div>
-        <div class="col text-center">
-          <span id="remainingLetters" data-toggle="tooltip" data-title="remainingLetters()"  data-placement="bottom" class="tootipEstilado"> letras restantes </span>
+        <div class="game card" id="gameCard">
+          <div class="row">
+            <div class="col text-center">
+              <span>Letras que faltan salir:</span> <p id="remainingLettersCount"/>
+            </div>
+            <div class="col text-center">
+              <span id="remainingLetters" data-toggle="tooltip" data-title="remainingLetters()"  data-placement="bottom" class="tootipEstilado"> letras restantes </span>
+            </div>
+          </div>
+          <div id="letter" class="row-1 text-center">
+          </div>
+          <div class="row">
+            <div class="col text-center">
+              <button onClick="popLetter()" id="letterButton" class="btn btn-primary">
+                Sacar Letra
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="successMessage" class="text-center">
+          <h2>¡Fin del juego!</h2>
+          <button id="resetGame" onClick="resetGame()" class="btn btn-dark">
+            Volver a jugar
+          </button>
         </div>
       </div>
-      <div class="row-1 text-center">
-        <span id="letter">&nbsp;</span>
-      </div>
-      <div class="row-1 text-center">
-        <h1 id="endGameText">
-          Termino!
-        </h1>
-      </div>
-      <div class="row">
-        <div class="col text-center">
-        <button onClick="popLetter()" id="letterButton" class="btn btn-primary">
-          Sacar Letra
-        </button>
-        </div>
-        <div class="col text-center">
-        <button id="resetGame" onClick="resetGame()" class="btn btn-danger">
-          Empezar de nuevo
-        </button>
-        </div>
-      </div>
-
-    </div>
   </body>
 </html>
