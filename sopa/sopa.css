@@ -69,10 +69,10 @@ h1, h2, h3, h4 {
 
 #cardSlots div {
   width: 58px;
-  height: 78px;
   background: #fff;
   border: 2px solid #333;
   border-radius: 10px;
+  font-size: 3rem;
 }
 
 #cardSlots div:first-child, #cardPile div:first-child {
